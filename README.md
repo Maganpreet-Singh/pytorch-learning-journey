@@ -1,302 +1,476 @@
-# PyTorch Learning Journey
+<!--
+  PyTorch Learning Journey
+  Maintainer: Maganpreet Singh
+  This README documents the repository as it currently exists and separates
+  published work from future learning goals.
+-->
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-flame.svg" alt="PyTorch logo" width="180"/>
-</p>
+<div align="center">
 
-<h1 align="center">PyTorch Learning Journey</h1>
+  <img src="https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-flame.svg" width="112" alt="PyTorch logo" />
 
-<p align="center">
-  <strong>A hands-on, notebook-first path from tensor fundamentals to practical deep learning.</strong>
-</p>
+  <h1>PyTorch Learning Journey</h1>
 
-<p align="center">
-  <a href="https://github.com/Maganpreet-Singh/pytorch-learning-journey"><img src="https://img.shields.io/badge/Project-Learning%20Repository-8A2BE2?style=for-the-badge" alt="Learning repository"/></a>
-  <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/></a>
-  <a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Interface-Jupyter%20Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter Notebook"/></a>
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>
-</p>
+  <p><strong>From tensors and gradients to reproducible training pipelines, computer vision experiments, and hyperparameter optimization.</strong></p>
 
-<p align="center">
-  <a href="#-about-the-project">About</a> •
-  <a href="#-learning-roadmap">Roadmap</a> •
-  <a href="#-repository-structure">Structure</a> •
-  <a href="#-getting-started">Get Started</a> •
-  <a href="#-learning-method">Learning Method</a> •
-  <a href="#-resources">Resources</a>
-</p>
+  <p>
+    <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-Learn%20by%20Building-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" /></a>
+    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></a>
+    <a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Format-Jupyter%20Notebooks-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter" /></a>
+    <a href="https://github.com/Maganpreet-Singh/pytorch-learning-journey"><img src="https://img.shields.io/badge/Repository-Open%20Source-181717?style=for-the-badge&logo=github" alt="GitHub repository" /></a>
+  </p>
+
+  <p>
+    <a href="#-start-here">Start here</a> ·
+    <a href="#-repository-map">Repository map</a> ·
+    <a href="#-learning-path">Learning path</a> ·
+    <a href="#-experiments">Experiments</a> ·
+    <a href="#-setup">Setup</a> ·
+    <a href="#-progress-board">Progress board</a>
+  </p>
+
+  <br />
+
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2&section=header" width="100%" alt="" />
+
+</div>
+
+## 👋 Welcome
+
+This repository is my practical record of learning **PyTorch and deep learning**. It is built around notebooks, experiments, debugging notes, visualizations, and small end-to-end implementations.
+
+The purpose is not to collect code that merely runs. The purpose is to understand the machinery behind a learning system:
+
+- How tensors represent numerical data and how their shape, type, and device affect computation.
+- How automatic differentiation builds a computation graph and calculates gradients.
+- How neural-network modules organize learnable parameters.
+- How datasets become batches that a model can consume.
+- How training loops connect forward passes, loss functions, backpropagation, and optimizer updates.
+- How to evaluate models with appropriate metrics rather than relying on a single score.
+- How experiments can be made more reproducible, interpretable, and easier to compare.
+- How hyperparameter search can help investigate model configurations.
+
+The repository is a **living learning journal**. It will change as I learn, test ideas, revisit earlier notebooks, and build more complete projects. Published files are linked directly below. Future directions are explicitly marked as planned.
+
+> [!IMPORTANT]
+> This is an educational repository. Notebooks are learning artifacts, not production-ready software or professional advice. In particular, the breast-cancer classification experiment is a public-dataset exercise and **must not be used for diagnosis, screening, treatment, or clinical decisions**.
 
 ---
 
-## 📌 About the Project
+## 🧭 Start here
 
-**PyTorch Learning Journey** is my personal, continuously growing repository for learning PyTorch and the foundations of deep learning through practical implementation.
+New to this repository? Follow this route:
 
-The goal is to understand not only *how to run a model*, but also **why the code works**: how tensors represent data, how operations create computation graphs, how gradients are calculated, how neural-network parameters are updated, how datasets are loaded, and how model performance should be evaluated.
+1. Read the tensor notebook to understand PyTorch's core data structure.
+2. Study autograd to see how gradients are computed.
+3. Learn how to define reusable models with `torch.nn.Module`.
+4. Understand how `Dataset` and `DataLoader` supply data to a model.
+5. Work through the training-pipeline notebook to connect the pieces.
+6. Explore Fashion-MNIST as an image-classification task.
+7. Inspect the Optuna experiment to see how hyperparameter optimization changes the workflow.
 
-This repository uses **Jupyter Notebooks** as the primary learning format. Each notebook is intended to combine explanations, executable code, meaningful output, visualizations where useful, and exercises that encourage active practice.
+**Quick links**
 
-### 🎯 What this repository is for
+| Your goal | Open this notebook |
+|---|---|
+| Understand tensors, dimensions, and tensor operations | [`tensors_in_pytorch.ipynb`](./tensors_in_pytorch.ipynb) |
+| Understand automatic differentiation | [`pytorch_autograd.ipynb`](./pytorch_autograd.ipynb) |
+| Build models with PyTorch's module system | [`pytorch_nn_module.ipynb`](./pytorch_nn_module.ipynb) |
+| Build a custom dataset and mini-batch pipeline | [`dataset_and_dataloader.ipynb`](./dataset_and_dataloader.ipynb) |
+| Train and evaluate tabular classifiers | [`pytorch_training_pipeline.ipynb`](./pytorch_training_pipeline.ipynb) |
+| Explore image classification with Fashion-MNIST | [`fashion_mnist.ipynb`](./fashion_mnist.ipynb) |
+| Explore automated hyperparameter search | [`Fashion_MNIST_Optuna.ipynb`](./Fashion_MNIST_Optuna.ipynb) |
 
-- Build a dependable foundation in PyTorch, starting with tensors and tensor operations.
-- Understand autograd, gradients, loss functions, optimizers, and the model-training loop.
-- Learn how to organize data using `Dataset` and `DataLoader`.
-- Progress toward neural networks, computer vision, convolutional neural networks (CNNs), and transfer learning.
-- Record experiments, mistakes, observations, and lessons learned in a public portfolio.
-- Develop the skills needed to build, debug, evaluate, and explain practical deep-learning projects.
+---
 
-> **Learning principle:** Do not just copy a notebook and run every cell. Predict the result, run the code, inspect the output, change a value, and explain what changed. Understanding compounds through deliberate practice.
+## 📚 Repository map
 
-## 🧭 Current Progress
+The following is the current top-level layout, based on the files in the repository. The notebooks are the primary learning material; the data and artifact folders support experimentation.
 
-This repository is a work in progress. The contents below reflect the materials currently present, followed by a planned progression. Planned sections are goals—not a claim that their notebooks have already been published.
+```text
+pytorch-learning-journey/
+│
+├── README.md
+│
+├── tensors_in_pytorch.ipynb
+├── pytorch_autograd.ipynb
+├── pytorch_nn_module.ipynb
+├── dataset_and_dataloader.ipynb
+├── pytorch_training_pipeline.ipynb
+│
+├── fashion_mnist.ipynb
+├── Fashion_MNIST_Optuna.ipynb
+│
+├── fashion-mnist_test.csv
+├── fmnist_small.csv
+│
+├── images/
+└── artifacts/
+```
 
-| Area | Status | Material |
-|---|---|---|
-| Tensor fundamentals | ✅ Available | [`tensors_in_pytorch.ipynb`](./tensors_in_pytorch.ipynb) |
-| Autograd and gradient computation | 🧭 Planned / to be expanded | Dedicated notebook |
-| Neural-network fundamentals | 🧭 Planned | Dedicated notebook |
-| Dataset and DataLoader | 🧭 Planned | Dedicated notebook |
-| Training loops and optimizers | 🧭 Planned | Dedicated notebook |
-| Computer vision and CNNs | 🧭 Planned | Dedicated notebook |
-| Transfer learning and evaluation | 🧭 Planned | Dedicated notebook |
-| End-to-end projects | 🧭 Planned | To be added as the foundations develop |
+### What each area is for
 
-**Current starting point:** the tensor notebook. It covers tensor creation, attributes, reshaping, indexing, data types, devices, arithmetic, broadcasting, reductions, matrix operations, NumPy interoperability, common pitfalls, and an introduction to autograd, with visualizations saved to an `images/` directory where generated by the notebook.
+| Path | Role |
+|---|---|
+| `tensors_in_pytorch.ipynb` | Tensor creation, inspection, manipulation, arithmetic, and related fundamentals |
+| `pytorch_autograd.ipynb` | Automatic differentiation, computation graphs, and gradient concepts |
+| `pytorch_nn_module.ipynb` | Model organization through PyTorch's neural-network module API |
+| `dataset_and_dataloader.ipynb` | Custom datasets, batching, shuffling, and data delivery |
+| `pytorch_training_pipeline.ipynb` | A structured binary-classification workflow, model comparison, evaluation, and exported outputs |
+| `fashion_mnist.ipynb` | Fashion-MNIST image-classification learning experiment |
+| `Fashion_MNIST_Optuna.ipynb` | Fashion-MNIST experiment involving Optuna-based hyperparameter search |
+| `fashion-mnist_test.csv`, `fmnist_small.csv` | Fashion-MNIST-related CSV data files |
+| `images/` | Visual assets and notebook-generated figures, where present |
+| `artifacts/` | Experiment outputs or model-related artifacts, where present |
 
-## 🗺️ Learning Roadmap
+> [!NOTE]
+> This map describes the checked-in top-level paths. Notebook cells may create additional outputs at runtime. A suggested future organization is not the same as a directory that already exists.
 
-The roadmap is ordered to reduce the temptation to jump into complex architectures before understanding the mechanics underneath them. The pace is flexible: move forward when you can explain and implement each topic without relying entirely on a tutorial.
+---
 
-### Phase 1 — Tensor Foundations
+## 🗺️ Learning path
 
-**Goal:** Become comfortable with the main data structure used by PyTorch.
+The topics below are arranged by dependency: understand the data representation first, then gradients, then models, then the data and training workflow, and finally experiments. The sequence is a learning guide, not a claim that every concept has a dedicated notebook or has been mastered.
 
-Topics:
-- Creating tensors from lists, ranges, constants, and random values.
-- Scalars, vectors, matrices, and higher-dimensional tensors.
-- Tensor shape, rank, number of elements, data type, and device.
-- Indexing, slicing, reshaping, flattening, stacking, and concatenation.
-- Element-wise arithmetic, reductions, comparisons, and matrix multiplication.
-- Broadcasting and common shape-mismatch errors.
-- Copying versus sharing storage, in-place operations, and safe tensor handling.
-- Moving data between CPU and supported accelerators.
-- Interoperability with NumPy arrays.
-- Reproducibility basics and random seeds.
-
-**Practice ideas:** create tensors of different shapes, predict the result of reshaping and broadcasting operations, implement a small matrix calculation, and debug a deliberate shape mismatch.
+### 1. Tensor fundamentals
 
 **Notebook:** [`tensors_in_pytorch.ipynb`](./tensors_in_pytorch.ipynb)
 
-### Phase 2 — Automatic Differentiation and Autograd
+Tensors are the basic data structure used throughout PyTorch. A tensor can represent a scalar, a vector, a matrix, an image batch, or a higher-dimensional data structure.
 
-**Goal:** Understand how PyTorch calculates gradients for learning.
+Concepts to understand:
 
-Topics to study:
-- Derivatives and the chain rule at an intuitive level.
-- Tensors with `requires_grad=True`.
-- Computation graphs and gradient tracking.
-- Calling `backward()` and inspecting `.grad`.
-- Why gradients accumulate and when to clear them.
+- Creating tensors from Python values, ranges, constants, and random values.
+- Scalar, vector, matrix, and higher-rank representations.
+- Shape, rank, number of elements, data type, and device.
+- Indexing, slicing, reshaping, flattening, stacking, and concatenation.
+- Element-wise arithmetic and comparison operations.
+- Reductions such as sum, mean, minimum, and maximum.
+- Matrix multiplication and the distinction between element-wise multiplication and linear algebra operations.
+- Broadcasting rules and shape compatibility.
+- CPU and accelerator placement.
+- NumPy interoperability.
+- In-place operations and memory-related considerations.
+- Reproducibility and random seeds.
+
+**Questions to ask while learning**
+
+1. What is the shape before and after this operation?
+2. Does the operation preserve the number of elements?
+3. Is this element-wise arithmetic or matrix multiplication?
+4. Which dimensions are compatible for broadcasting?
+5. Where is the tensor stored, and what is its data type?
+6. Does this operation create a new tensor or modify an existing one?
+
+**Practice challenge:** create a three-dimensional tensor, predict the result of a sequence of indexing and reshape operations, and verify each prediction with assertions.
+
+### 2. Automatic differentiation and autograd
+
+**Notebook:** [`pytorch_autograd.ipynb`](./pytorch_autograd.ipynb)
+
+Neural networks learn by adjusting parameters in response to gradients. PyTorch's autograd system records operations and computes derivatives when requested.
+
+Key ideas:
+
+- Derivatives and the chain rule.
+- Tensors created with `requires_grad=True`.
+- Computation graphs and recorded operations.
+- Calling `backward()` and inspecting gradients.
+- Gradient accumulation and why optimizers typically clear gradients.
 - Leaf tensors and non-leaf tensors.
-- Detaching tensors from the graph.
-- `torch.no_grad()` and `torch.inference_mode()` and their intended uses.
-- Common autograd mistakes and how to diagnose them.
+- Detaching values from the graph.
+- Gradient tracking contexts.
+- The difference between disabling gradient tracking and changing a tensor's values.
+- Debugging missing or unexpected gradients.
 
-**Practice ideas:** calculate the gradient of a simple polynomial, verify a derivative by hand, and compare tracked and untracked operations.
+A tiny example:
 
-### Phase 3 — Neural Network Building Blocks
+```python
+import torch
 
-**Goal:** Learn the components from which trainable models are built.
+x = torch.tensor(3.0, requires_grad=True)
+y = x**2 + 2*x + 1
+
+y.backward()
+
+print("y:", y.item())
+print("dy/dx:", x.grad.item())
+```
+
+For (y=x^2+2x+1), the derivative is (2x+2). At (x=3), the gradient is (8).
+
+**Practice challenge:** calculate a derivative manually, calculate it with autograd, then compare the two results. Change the function and repeat.
+
+### 3. Neural networks with `torch.nn.Module`
+
+**Notebook:** [`pytorch_nn_module.ipynb`](./pytorch_nn_module.ipynb)
+
+A model needs a clear place to define layers, parameters, and the forward computation. PyTorch's module system provides that structure.
+
+Concepts to study:
+
+- What a model represents.
+- Parameters, weights, and biases.
+- Linear layers and input/output dimensions.
+- Activation functions and nonlinear transformations.
+- The `nn.Module` base class.
+- The `__init__` method and layer registration.
+- The `forward()` method.
+- Model inspection and parameter counting.
+- Training and evaluation modes.
+- The difference between defining a model and training it.
+
+Example skeleton:
+
+```python
+import torch
+from torch import nn
+
+class SimpleClassifier(nn.Module):
+    def __init__(self, input_features: int, hidden_features: int, classes: int):
+        super().__init__()
+        self.network = nn.Sequential(
+            nn.Linear(input_features, hidden_features),
+            nn.ReLU(),
+            nn.Linear(hidden_features, classes),
+        )
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return self.network(x)
+
+model = SimpleClassifier(
+    input_features=10,
+    hidden_features=32,
+    classes=2,
+)
+
+print(model)
+```
+
+The dimensions above are illustrative. A real model's layer sizes must match its data and task.
+
+**Practice challenge:** construct a small model, pass a batch of inputs through it, inspect every intermediate shape, and explain how the final output dimensions relate to the task.
+
+### 4. Datasets and DataLoaders
+
+**Notebook:** [`dataset_and_dataloader.ipynb`](./dataset_and_dataloader.ipynb)
+
+A model does not train directly from an arbitrary folder of files. Data must be represented, validated, and supplied in a consistent form.
+
+The core distinction:
+
+- `Dataset` describes how to access an individual sample and its target.
+- `DataLoader` organizes samples into batches and controls how those batches are delivered.
 
 Topics:
-- What a neural network learns from data.
-- Features, labels, parameters, weights, and biases.
-- Linear layers with `torch.nn.Linear`.
-- Activation functions, including ReLU and sigmoid where appropriate.
-- Loss functions for regression and classification.
-- The role of `torch.nn.Module`.
-- Model initialization and model parameter inspection.
-- Tensor dimensions as data moves through a network.
-- Forward passes and predictions.
 
-**Practice ideas:** build a tiny network, print its parameters, pass a batch through it, and check every intermediate shape.
-
-### Phase 4 — Data Pipelines
-
-**Goal:** Learn to feed data to a model consistently and efficiently.
-
-Topics:
-- Features, targets, samples, and batches.
-- Separating training, validation, and test data.
 - Custom `Dataset` implementations.
-- Using `DataLoader` for batching and shuffling.
-- Transformations and preprocessing.
-- Handling numerical and categorical features appropriately.
-- Image tensors, channel order, normalization, and labels.
-- Avoiding data leakage.
+- The `__len__()` and `__getitem__()` methods.
+- Converting arrays to tensors.
+- Feature and label shapes.
+- Train/test splitting.
+- Data preprocessing and leakage prevention.
+- Mini-batches and batch dimensions.
+- Shuffling and deterministic behavior.
+- `batch_size`, `drop_last`, and worker configuration.
+- Inspecting batches before training.
+- Connecting a data pipeline to a neural network.
 
-**Practice ideas:** make a small synthetic dataset, build a custom dataset class, load mini-batches, and inspect the shapes and values.
+Example:
 
-### Phase 5 — The Training Loop
+```python
+from torch.utils.data import DataLoader, TensorDataset
+import torch
 
-**Goal:** Understand the repeated process that updates model parameters.
+features = torch.randn(100, 4)
+labels = torch.randint(0, 2, (100,))
 
-A typical training step follows this sequence:
+dataset = TensorDataset(features, labels)
+loader = DataLoader(dataset, batch_size=16, shuffle=True)
 
-1. Put the model in training mode with `model.train()`.
-2. Get a batch of inputs and targets.
-3. Clear old parameter gradients with `optimizer.zero_grad()`.
-4. Run the forward pass.
-5. Calculate the loss.
-6. Call `loss.backward()` to compute gradients.
-7. Call `optimizer.step()` to update the parameters.
-8. Track metrics and inspect the learning curves.
-
-Important concepts:
-- SGD and Adam optimizers.
-- Learning rate, batch size, epochs, and weight decay.
-- Training versus evaluation mode.
-- Validation loss and overfitting.
-- Checkpointing and saving/loading `state_dict`.
-- Reproducibility and experiment records.
-- Device-aware model and tensor placement.
-- Diagnosing exploding, vanishing, or missing gradients.
-
-**Practice ideas:** train a small model on generated data, plot loss over epochs, and compare two learning rates while keeping the rest of the experiment fixed.
-
-### Phase 6 — Model Evaluation and Responsible Experiments
-
-**Goal:** Determine whether a model actually generalizes.
-
-Topics:
-- Baselines and meaningful comparisons.
-- Classification accuracy and its limitations.
-- Precision, recall, F1 score, and confusion matrices.
-- Regression metrics such as MAE and MSE.
-- Validation versus final test evaluation.
-- Class imbalance and decision thresholds.
-- Error analysis and prediction inspection.
-- Saving the configuration, random seed, metrics, and checkpoint.
-- Reproducible comparisons and documenting limitations.
-
-**Practice ideas:** compare model predictions with ground truth, analyze false positives and false negatives, and record results in a compact experiment table.
-
-### Phase 7 — Computer Vision and CNNs
-
-**Goal:** Apply PyTorch to image-based learning tasks.
-
-Topics:
-- Image dimensions, channels, pixel values, and normalization.
-- Convolution, kernels, stride, and padding.
-- Pooling and feature maps.
-- Flattening and classification heads.
-- Building a CNN with `torch.nn`.
-- Image datasets and transforms.
-- Training and validating an image classifier.
-- Overfitting and data augmentation.
-- Visualizing sample images, labels, predictions, and mistakes.
-
-**Practice ideas:** train a small image classifier on a beginner-friendly dataset, plot a confusion matrix, and inspect misclassified images.
-
-### Phase 8 — Transfer Learning
-
-**Goal:** Use an established pretrained vision model as a starting point.
-
-Topics:
-- What pretrained weights provide.
-- Feature extraction versus fine-tuning.
-- Freezing and unfreezing layers.
-- Replacing a classification head.
-- Dataset-specific transforms.
-- Comparing a baseline CNN with a pretrained model.
-- Model size, inference time, and accuracy trade-offs.
-- Correct use of pretrained weights and their licensing/usage terms.
-
-**Practice ideas:** fine-tune a pretrained model on a small, clearly defined dataset and document the evaluation protocol.
-
-### Phase 9 — Practical Projects
-
-**Goal:** Turn concepts into complete, explainable deliverables.
-
-Project ideas, in increasing scope:
-1. **Tensor Playground:** demonstrate tensor operations and broadcasting with assertions.
-2. **Regression from Scratch:** train a neural network on a clean regression dataset.
-3. **Tabular Classifier:** implement a complete train/validation/test workflow.
-4. **Image Classifier:** classify a small set of image categories and analyze errors.
-5. **Transfer Learning Study:** compare a custom CNN and a pretrained model.
-6. **Experiment Tracker:** save configuration, metrics, plots, and model checkpoints.
-7. **End-to-End Demo:** package a model behind a small local interface or API after evaluation is complete.
-
-Every project should answer four questions: What problem is being solved? What data is used? How was performance measured? What are the limitations?
-
-## 🗂️ Repository Structure
-
-The repository is expected to grow as lessons are added. The currently published files are shown first; the tree below also suggests a maintainable future organization.
-
-### Current files
-
-```text
-pytorch-learning-journey/
-├── README.md
-├── tensors_in_pytorch.ipynb
-└── images/
+for batch_features, batch_labels in loader:
+    print(batch_features.shape, batch_labels.shape)
+    break
 ```
 
-### Suggested future organization
+**Practice challenge:** write a custom dataset class, inspect an individual sample, then inspect a batch. Explain which dimensions represent the batch and which represent the features.
 
-```text
-pytorch-learning-journey/
-├── README.md
-├── requirements.txt                 # Optional, when dependencies are established
-├── .gitignore
-├── images/                          # Notebook-generated visualizations
-├── 01_tensor_fundamentals/
-│   └── tensors_in_pytorch.ipynb
-├── 02_autograd/
-│   └── autograd_and_gradients.ipynb
-├── 03_neural_networks/
-│   └── building_neural_networks.ipynb
-├── 04_data_pipeline/
-│   └── datasets_and_dataloaders.ipynb
-├── 05_training/
-│   └── training_loop_and_optimizers.ipynb
-├── 06_evaluation/
-│   └── model_evaluation.ipynb
-├── 07_computer_vision/
-│   └── cnn_image_classification.ipynb
-├── 08_transfer_learning/
-│   └── transfer_learning.ipynb
-└── projects/
-    ├── regression/
-    ├── tabular_classification/
-    └── image_classification/
-```
+### 5. Training pipelines
 
-This is a proposed layout, not a claim that every listed path already exists. Keep each folder purposeful, use descriptive notebook names, and avoid adding empty directories only to make the project appear bigger.
+**Notebook:** [`pytorch_training_pipeline.ipynb`](./pytorch_training_pipeline.ipynb)
 
-## ⚙️ Getting Started
+This notebook takes the component ideas into a fuller classification workflow. Its documented focus is a public breast-cancer benchmark dataset and a comparison between a PyTorch logistic-regression baseline and a multilayer perceptron.
 
-### 1. Prerequisites
+The notebook description identifies these workflow elements:
 
-Helpful background:
-- Basic Python syntax, functions, loops, lists, and dictionaries.
-- Basic familiarity with NumPy is useful but not mandatory.
-- A general understanding of vectors, matrices, and functions.
-- Curiosity and willingness to debug tensor shapes.
+- Environment setup and reproducibility.
+- Data loading and validation.
+- Exploratory data analysis with interactive Plotly visualizations.
+- Train, validation, and test splitting.
+- Preprocessing fitted on training data rather than on the full dataset.
+- Tensor and data-loader construction.
+- Model training and comparison.
+- Early stopping.
+- Threshold analysis.
+- Evaluation.
+- Exporting artifacts.
 
-You do not need a dedicated GPU to start learning tensors or run many introductory models. A CPU is sufficient for the current tensor notebook and small exercises. Larger experiments may benefit from compatible acceleration, but hardware requirements depend on the task.
+**Why this matters**
 
-### 2. Clone the repository
+A training pipeline is more than a loop. It is a chain of decisions. Data splitting, preprocessing, the loss function, optimizer settings, the evaluation metric, threshold selection, and checkpoint selection can all change the conclusions.
+
+**Important interpretation rule:** a benchmark score is not a guarantee of real-world performance. The dataset, split strategy, class distribution, and evaluation protocol determine what a metric means.
+
+> [!WARNING]
+> The breast-cancer notebook is for machine-learning education only. It is not clinically validated and must not be used to diagnose, screen, treat, or guide decisions for any person.
+
+### 6. Fashion-MNIST image classification
+
+**Notebook:** [`fashion_mnist.ipynb`](./fashion_mnist.ipynb)
+
+Fashion-MNIST is an image-classification learning task involving grayscale images of clothing categories. It is a useful bridge from tabular data to image tensors and classification workflows.
+
+A typical image-classification workflow includes:
+
+- Loading image samples and labels.
+- Understanding image dimensions and pixel values.
+- Visualizing a sample grid.
+- Normalizing or transforming inputs when appropriate.
+- Defining a model compatible with the input shape.
+- Training using batches.
+- Tracking loss and evaluation metrics.
+- Inspecting individual predictions and mistakes.
+- Understanding the difference between a correct prediction and a well-generalized model.
+
+The CSV files in the repository are related data assets. Check the notebook's loading cells for the exact columns and preprocessing expected; do not assume that every CSV has the same schema.
+
+**Practice challenge:** select several test examples, visualize their images, and compare the predicted class with the true label. Record patterns in the model's mistakes.
+
+### 7. Hyperparameter optimization with Optuna
+
+**Notebook:** [`Fashion_MNIST_Optuna.ipynb`](./Fashion_MNIST_Optuna.ipynb)
+
+Hyperparameters are choices made before or around training: learning rate, batch size, model width, dropout, optimizer configuration, and other experiment settings. Optuna provides a framework for defining and running search trials.
+
+A disciplined optimization experiment should:
+
+- Define a clear objective metric.
+- Separate training and validation data.
+- Specify which parameters are fixed and which are searched.
+- Choose reasonable search ranges.
+- Keep the evaluation protocol consistent across trials.
+- Save the best configuration and relevant trial results.
+- Compare the tuned experiment against a meaningful baseline.
+- Use the test set only for final evaluation, not repeated tuning.
+
+**Practice challenge:** run a small search with a limited trial budget, inspect the trial history, and compare the selected configuration against a baseline trained under the same evaluation protocol.
+
+> [!TIP]
+> Hyperparameter optimization cannot rescue a flawed dataset split or an invalid evaluation method. First make the experiment trustworthy; then make it faster or more effective.
+
+---
+
+## 🔬 Experiments
+
+This section describes the kinds of questions these notebooks help investigate. It intentionally avoids publishing unverified accuracy values or claiming a best model without checking the notebook outputs.
+
+### Experiment A — Understanding tensor behavior
+
+**Question:** How do shape, dtype, device, and broadcasting affect tensor operations?
+
+**Variables to inspect:** input shape, output shape, data type, device, and whether the operation is in-place.
+
+**Evidence to record:** small examples, printed shapes, assertions, and explanations of any errors encountered.
+
+### Experiment B — Understanding gradients
+
+**Question:** How does autograd compute a derivative through a sequence of operations?
+
+**Variables to inspect:** input values, `requires_grad`, the scalar objective, and resulting gradients.
+
+**Evidence to record:** hand calculations, autograd output, and a short explanation of the chain rule.
+
+### Experiment C — Data pipeline behavior
+
+**Question:** How do dataset indexing and data-loader configuration change the batches seen by the model?
+
+**Variables to inspect:** dataset length, batch size, shuffle behavior, incomplete final batches, and worker configuration.
+
+**Evidence to record:** sample shapes, batch shapes, and a comparison of loader configurations.
+
+### Experiment D — Tabular classification workflow
+
+**Question:** How do a linear baseline and an MLP compare on a defined binary-classification benchmark?
+
+**Variables to inspect:** preprocessing, split strategy, architecture, optimizer, early-stopping behavior, classification threshold, and metrics.
+
+**Evidence to record:** validation curves, selected threshold, test metrics, confusion matrix, and limitations. The dataset is educational, not clinical.
+
+### Experiment E — Fashion-MNIST modeling
+
+**Question:** How well can a model classify grayscale clothing images, and what kinds of examples are confusing?
+
+**Variables to inspect:** model architecture, learning rate, batch size, number of epochs, and preprocessing.
+
+**Evidence to record:** learning curves, test metrics, sample predictions, and error analysis.
+
+### Experiment F — Hyperparameter search
+
+**Question:** Can a controlled search identify a configuration that performs better on validation data than a baseline?
+
+**Variables to inspect:** search space, objective, trial count, pruning behavior if used, and best-trial settings.
+
+**Evidence to record:** trial history, best configuration, baseline comparison, and final held-out evaluation.
+
+### Experiment record template
+
+Use this structure when adding a new experiment:
+
+| Field | What to record |
+|---|---|
+| Research question | What are you trying to learn? |
+| Dataset | Source, version, license, and task |
+| Split | Train/validation/test strategy |
+| Preprocessing | Transformations and where they are fitted |
+| Model | Architecture and parameter count |
+| Loss | Objective used for optimization |
+| Optimizer | Algorithm and relevant settings |
+| Hyperparameters | Learning rate, batch size, epochs, etc. |
+| Randomness | Seeds and deterministic settings |
+| Compute | CPU/GPU and relevant software versions |
+| Metrics | Validation and final test metrics |
+| Observations | What happened and why it might have happened |
+| Limitations | What the experiment does not establish |
+| Next step | One change to investigate |
+
+Never fill metric fields with guessed values. Record the actual output from a completed run.
+
+---
+
+## ⚙️ Setup
+
+The repository is notebook-first. The setup below creates an isolated Python environment and installs the packages needed to begin. PyTorch installation commands vary by operating system and accelerator, so use the official selector for the exact command for your machine.
+
+### Prerequisites
+
+- Python version supported by the selected PyTorch release.
+- Git.
+- Jupyter Notebook or JupyterLab, or an editor that supports notebooks.
+- Basic Python knowledge.
+- Enough disk space for the repository and any datasets or experiment outputs.
+
+A GPU is not required for the introductory concepts or small experiments. Larger experiments may benefit from a supported accelerator.
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Maganpreet-Singh/pytorch-learning-journey.git
 cd pytorch-learning-journey
 ```
 
-### 3. Create a virtual environment
+### 2. Create a virtual environment
 
-**Windows (PowerShell):**
+**Windows — PowerShell**
 
 ```powershell
 python -m venv .venv
@@ -304,7 +478,7 @@ python -m venv .venv
 python -m pip install --upgrade pip
 ```
 
-**Windows (Command Prompt):**
+**Windows — Command Prompt**
 
 ```bat
 python -m venv .venv
@@ -312,7 +486,7 @@ python -m venv .venv
 python -m pip install --upgrade pip
 ```
 
-**macOS / Linux:**
+**macOS / Linux**
 
 ```bash
 python3 -m venv .venv
@@ -320,330 +494,345 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 ```
 
-If environment activation is blocked by local policy, use the appropriate shell-specific activation guidance or run the environment's Python executable directly.
+### 3. Install PyTorch
 
-### 4. Install PyTorch
+Use the official [PyTorch Start Locally page](https://pytorch.org/get-started/locally/) and select the options matching your operating system, package manager, language, and compute platform.
 
-Choose the correct installation command from the official [PyTorch Start Locally selector](https://pytorch.org/get-started/locally/). Available commands depend on the operating system, Python version, and whether you need CPU or accelerator support. Do not copy a CUDA-specific command unless it matches your system.
-
-Install Jupyter if it is not already available in the environment:
+Then install notebook and commonly used supporting packages:
 
 ```bash
-python -m pip install jupyter
+python -m pip install jupyter numpy pandas matplotlib scikit-learn
 ```
 
-If your project uses additional packages such as NumPy or Matplotlib, install them only when needed by the notebook:
+Some notebooks use additional packages. For example, the training-pipeline notebook documents interactive Plotly visualizations, and the optimization notebook uses Optuna. Install the packages required by the notebook you intend to run:
 
 ```bash
-python -m pip install numpy matplotlib
+python -m pip install plotly optuna
 ```
 
-### 5. Verify the installation
+Do not assume a single command is the correct accelerator build for every machine. Follow the official selector if you need CUDA or another supported compute backend.
 
-Run the following in Python or in a notebook cell:
+### 4. Verify the environment
 
 ```python
+import sys
 import torch
 
-print("PyTorch version:", torch.__version__)
+print("Python:", sys.version)
+print("PyTorch:", torch.__version__)
 print("CUDA available:", torch.cuda.is_available())
 
+if torch.cuda.is_available():
+    print("GPU:", torch.cuda.get_device_name(0))
+
 sample = torch.tensor([[1.0, 2.0], [3.0, 4.0]])
+print("Sample tensor:")
 print(sample)
-print("Shape:", sample.shape)
-print("Data type:", sample.dtype)
+print("Shape:", tuple(sample.shape))
+print("Dtype:", sample.dtype)
+print("Device:", sample.device)
 ```
 
-If CUDA reports `False`, that does not automatically mean the installation is broken. It may mean the environment is CPU-only or the supported accelerator setup is unavailable. Verify your installation against the official selector.
+A CUDA result of `False` does not automatically indicate a broken installation. It may simply mean that the installed build is CPU-only or that a compatible accelerator is not available in the current environment.
 
-### 6. Launch Jupyter
+### 5. Launch Jupyter
 
 ```bash
 jupyter notebook
 ```
 
-Open `tensors_in_pytorch.ipynb` and run the notebook from top to bottom. Alternatively, open the repository in VS Code and select the virtual environment as the notebook kernel.
+Open the notebook you want to study. In VS Code, select the interpreter from the virtual environment and make sure that the notebook kernel uses that same environment.
 
-## 📓 Notebook Guide: Tensors in PyTorch
+### 6. Run notebooks responsibly
 
-**File:** [`tensors_in_pytorch.ipynb`](./tensors_in_pytorch.ipynb)
+- Start with a fresh kernel.
+- Run cells in order.
+- Read the Markdown instructions before executing code.
+- Check dataset paths and expected files.
+- Do not overwrite valuable artifacts without understanding the notebook's save behavior.
+- Record package versions when an experiment needs to be reproduced.
+- Review data usage terms before downloading or redistributing datasets.
 
-This is the current entry point to the project. The notebook is designed as a practical reference rather than a page of definitions.
+---
 
-### Learning outcomes
+## 🧪 How I study each notebook
 
-After completing the notebook, you should be able to:
-- Create tensors from different sources.
-- Inspect shape, rank, size, data type, and device.
-- Reshape, combine, index, and slice tensors.
-- Use arithmetic, reductions, comparisons, and matrix operations.
-- Reason about broadcasting and tensor compatibility.
-- Recognize common pitfalls involving copies and in-place operations.
-- Move tensors to CPU or supported accelerators.
-- Convert between PyTorch tensors and NumPy arrays.
-- Run a basic example of automatic differentiation.
-- Work with visualizations generated by the notebook.
+The most useful habit in technical learning is to turn passive reading into active testing.
 
-### Recommended workflow
+### The predict → run → inspect → explain loop
 
-1. Read the explanation above each code cell.
-2. Predict the output before running it.
-3. Run the cell and compare your prediction.
-4. Change the input values, shape, or data type.
-5. Write a short comment describing the behavior you observed.
-6. Complete the exercises before moving on.
-7. Re-run the notebook from a clean kernel to ensure the execution order is valid.
+1. **Predict:** before running a cell, write down what you expect.
+2. **Run:** execute the smallest example that tests the idea.
+3. **Inspect:** check values, shapes, dtypes, devices, gradients, plots, or metrics.
+4. **Explain:** state why the result occurred in your own words.
+5. **Modify:** change one input or parameter and run the test again.
+6. **Record:** keep the lesson, the bug, and the fix in the notebook.
 
-### Common tensor concepts to remember
+### Debug tensor shapes early
 
-| Concept | Meaning |
-|---|---|
-| Shape | The length of each dimension, such as `(3, 4)` |
-| Rank / number of dimensions | The number of tensor dimensions |
-| `dtype` | The type used to represent each element |
-| Device | Where the tensor is stored and operations are executed |
-| Broadcasting | Rules PyTorch uses to perform operations on compatible shapes |
-| Autograd | PyTorch's system for tracking operations and computing derivatives |
-| `requires_grad` | Whether autograd should track operations for gradient computation |
-
-### Troubleshooting checklist
-
-- **Shape error:** inspect every relevant tensor's `.shape` before changing dimensions.
-- **Unexpected data type:** inspect `.dtype`; specify a type deliberately when needed.
-- **Device mismatch:** ensure model parameters and input tensors are on compatible devices.
-- **Unexpected gradient:** check `requires_grad`, graph tracking, and whether gradients were reset.
-- **Notebook variable missing:** run cells in order or restart the kernel and run all cells.
-- **Plot not saved:** check the notebook's working directory and create the output directory before saving.
-- **Different random results:** set appropriate random seeds, while remembering exact reproducibility can depend on hardware and operation settings.
-
-## 🧠 Learning Method
-
-A good learning repository records evidence of understanding, not just completed videos or copied code.
-
-### Use the predict–run–explain cycle
-
-For each important operation:
-
-1. **Predict:** write down the expected shape, output, or behavior.
-2. **Run:** execute the smallest code example that tests the prediction.
-3. **Inspect:** examine values, shapes, data types, gradients, or plots.
-4. **Explain:** describe why the result occurred in your own words.
-5. **Modify:** test a new shape or edge case.
-6. **Record:** add the lesson or a corrected example to the notebook.
-
-### Keep experiments small and controlled
-
-When comparing learning rates, architectures, or optimizers, change one major factor at a time whenever practical. Preserve the random seed and dataset split when doing a controlled comparison. Record settings and metrics instead of relying on memory.
-
-### Debug shapes explicitly
-
-A useful debugging habit is:
+A few explicit checks can save a lot of time:
 
 ```python
 print("inputs:", inputs.shape, inputs.dtype, inputs.device)
 print("targets:", targets.shape, targets.dtype, targets.device)
 ```
 
-Adapt the variable names to the notebook. Checking shape, data type, and device early often reveals errors before they become harder to trace.
+The variable names are examples; use the names present in your own training loop.
 
-### Keep notebooks readable
+### Keep experiments controlled
 
-- Give each notebook one main purpose.
-- Use Markdown cells to explain the question and the result.
-- Use descriptive variable names.
-- Keep large datasets and generated model checkpoints out of Git unless there is a specific, justified reason to version them.
-- Avoid committing credentials, access tokens, private data, or unnecessarily large outputs.
-- Record package versions when reproducibility matters.
-- Make visualizations readable, labeled, and relevant to the learning goal.
+When comparing configurations, change one major factor at a time where possible. Keep the dataset split and evaluation protocol consistent. Save configuration and metrics rather than relying on memory.
 
-## 🧪 Suggested Exercises
+### Make notebooks readable
 
-These exercises can be completed as additional cells in the relevant notebooks.
-
-### Tensor foundations
-
-- Create a tensor of shape `(2, 3, 4)` and explain what each dimension represents.
-- Reshape a tensor while preserving the number of elements.
-- Demonstrate a compatible broadcasting operation and an incompatible one.
-- Compute matrix multiplication and compare it with element-wise multiplication.
-- Convert an array to a tensor and note any shared-memory behavior where applicable.
-- Make a tensor with gradients enabled and compute a simple derivative.
-
-### Autograd
-
-- Compute the derivative of (y = 3x^2 + 2x + 1) at a chosen value.
-- Compare a gradient computed by hand with autograd.
-- Show how gradient accumulation changes results across backward passes.
-- Demonstrate the difference between a regular tracked operation and a no-gradient context.
-
-### Neural networks
-
-- Create a linear layer and inspect its input and output dimensions.
-- Construct a small multilayer perceptron.
-- Compare regression and classification output layers.
-- Calculate a loss value and inspect gradients before and after an optimizer step.
-
-### Training and evaluation
-
-- Train on a small dataset with a fixed train/validation split.
-- Plot training and validation loss.
-- Compare two learning rates with the same model and data split.
-- Calculate a confusion matrix and inspect misclassified examples.
-- Save a model's `state_dict`, reload it, and confirm that predictions match in the same evaluation conditions.
-
-## 📊 Experiment Log Template
-
-Use a table like this when you begin comparing models. Populate it with real results; do not enter guessed metrics.
-
-| Date | Task | Model | Key settings | Validation metric | Observation |
-|---|---|---|---|---|---|
-| YYYY-MM-DD | Example task | Baseline model | Record optimizer, learning rate, batch size | To be measured | What changed and why? |
-
-For more complex experiments, save a configuration file with:
-- Dataset name and version.
-- Data preprocessing and split strategy.
-- Model architecture.
-- Loss function and optimizer.
-- Learning rate, batch size, and number of epochs.
-- Random seed and compute device.
-- Validation results and checkpoint location.
-
-## 🧰 Tools and Technologies
-
-| Tool | Role in this repository |
-|---|---|
-| [Python](https://www.python.org/) | Main programming language |
-| [PyTorch](https://pytorch.org/) | Tensor operations, automatic differentiation, and deep learning |
-| [Jupyter](https://jupyter.org/) | Interactive learning notebooks |
-| [NumPy](https://numpy.org/) | Array operations and interoperability |
-| [Matplotlib](https://matplotlib.org/) | Plots and learning visualizations |
-| [Git](https://git-scm.com/) | Version history |
-| [GitHub](https://github.com/) | Hosting, documentation, and portfolio |
-
-Additional tools may be introduced when a notebook requires them. The repository should stay lightweight and understandable rather than accumulate dependencies without a clear purpose.
-
-## 📚 Recommended Learning Resources
-
-Use primary documentation as the reference for API details, then reinforce concepts by implementing them yourself.
-
-### Official PyTorch resources
-
-- [PyTorch — Main Website](https://pytorch.org/)
-- [Start Locally / Installation Selector](https://pytorch.org/get-started/locally/)
-- [Official PyTorch Tutorials](https://pytorch.org/tutorials/)
-- [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)
-- [Tensors](https://pytorch.org/docs/stable/tensors.html)
-- [Autograd Mechanics](https://pytorch.org/docs/stable/notes/autograd.html)
-- [torch.nn](https://pytorch.org/docs/stable/nn.html)
-- [Data Utilities](https://pytorch.org/docs/stable/data.html)
-- [Saving and Loading Models](https://pytorch.org/tutorials/beginner/saving_loading_models.html)
-
-### Practical learning repository
-
-- [Learn PyTorch for Deep Learning](https://github.com/mrdbourke/pytorch-deep-learning) — a practical, notebook-based companion resource. Use it to reinforce topics, but write and understand your own implementations rather than copying solutions blindly.
-
-### General supporting tools
-
-- [Python Documentation](https://docs.python.org/3/)
-- [NumPy Documentation](https://numpy.org/doc/stable/)
-- [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html)
-- [Jupyter Documentation](https://docs.jupyter.org/)
-
-Links are provided as starting points. Package APIs and installation instructions may change, so refer to the official documentation for your current environment.
-
-## ✅ Personal Progress Checklist
-
-Use this checklist as a learning guide. Mark an item as complete only when you can implement and explain it without simply reproducing an example.
-
-### Foundations
-- [ ] Create tensors from common sources.
-- [ ] Explain shape, rank, dtype, and device.
-- [ ] Reshape, index, slice, and combine tensors.
-- [ ] Explain broadcasting with an example.
-- [ ] Perform element-wise and matrix operations.
-- [ ] Convert between NumPy arrays and tensors.
-- [ ] Explain the basic purpose of autograd.
-
-### Model building
-- [ ] Compute gradients using `backward()`.
-- [ ] Explain gradient accumulation and clearing.
-- [ ] Build a model with `torch.nn.Module`.
-- [ ] Select an appropriate loss function.
-- [ ] Use a `Dataset` and `DataLoader`.
-- [ ] Implement a complete training loop.
-- [ ] Evaluate a model without updating its parameters.
-- [ ] Save and reload a model checkpoint.
-
-### Applied deep learning
-- [ ] Build a reproducible baseline.
-- [ ] Plot and interpret training and validation curves.
-- [ ] Evaluate errors beyond accuracy alone.
-- [ ] Train a basic CNN.
-- [ ] Compare a custom model with transfer learning.
-- [ ] Document a complete project and its limitations.
-
-## 🔒 Data, Models, and Repository Hygiene
-
-This is a learning repository, so keeping it safe and maintainable is part of the learning process.
-
-- Do not upload passwords, access tokens, private keys, or credentials.
-- Do not commit private or sensitive datasets without explicit authorization.
-- Keep large downloaded datasets out of Git; document the download source and setup instead.
-- Consider keeping trained checkpoints outside the repository unless small model artifacts are essential to demonstrate functionality.
-- Respect dataset licenses, terms of use, attribution requirements, and privacy constraints.
-- Record the source and license of third-party code, data, pretrained weights, and assets.
-- Do not describe an experiment as successful unless it has actually been run and evaluated.
-- Report meaningful limitations, including dataset bias, class imbalance, uncertainty, and failure cases when applicable.
-
-## 🤝 Contributions and Suggestions
-
-This repository primarily documents my learning process, but constructive feedback and educational suggestions are welcome.
-
-Useful contributions could include:
-- Fixing a code or documentation error.
-- Suggesting a clearer explanation of a PyTorch concept.
-- Proposing a focused exercise or edge case.
-- Improving a reproducibility instruction.
-- Recommending a reliable, relevant learning resource.
-
-For substantial changes, open an issue first to discuss the purpose and scope. Any contributed code or materials should be original or appropriately attributed and licensed.
-
-## 🗓️ Future Direction
-
-The project will expand as the underlying concepts are practiced and understood. The intended sequence is:
-
-1. Strengthen tensor fluency and autograd.
-2. Build neural networks from basic components.
-3. Master datasets, data loading, and training loops.
-4. Learn evaluation, checkpointing, and reproducibility.
-5. Explore CNNs and computer vision.
-6. Practice transfer learning and model comparison.
-7. Publish small end-to-end projects with clear documentation.
-
-This sequence may evolve based on experiments and learning needs. Accuracy and understanding matter more than completing every topic quickly.
-
-## 🌱 Why This Journey Matters
-
-Deep learning is not a collection of architecture names or one-click training scripts. It is a discipline of representing data, designing experiments, optimizing parameters, measuring performance, and learning from failure.
-
-This repository is a place to make that process visible. Each notebook should make one concept easier to understand; each experiment should test a clear question; each project should demonstrate not only a prediction, but also the reasoning and evaluation behind it.
-
-**The goal is progress that can be inspected, repeated, and explained.**
-
-If you are also learning PyTorch, feel free to explore the notebooks and use the linked official documentation as you practice.
+- Give each notebook a clear learning objective.
+- Use Markdown cells to explain why a code block exists.
+- Prefer descriptive variable names.
+- Keep output relevant; remove huge accidental logs.
+- Label charts and explain what they demonstrate.
+- Include assertions for important shape and data assumptions.
+- Restart the kernel and run all cells before committing a notebook.
+- Keep private data and credentials out of notebooks.
 
 ---
 
-## 📄 License and Attribution
+## 📈 Progress board
 
-Unless a license file is added to this repository, the reuse terms for this repository's original content have not been formally specified. Check the licenses for any third-party code, datasets, pretrained weights, and media before reuse. A suitable repository license can be added when the intended sharing terms are decided.
+This board is a roadmap, not an externally verified assessment of mastery. A topic should be considered complete only when I can implement and explain it independently.
 
-## 🔗 Repository
+### Core PyTorch
 
-**GitHub:** [Maganpreet-Singh/pytorch-learning-journey](https://github.com/Maganpreet-Singh/pytorch-learning-journey)
+- [ ] Create tensors from common sources.
+- [ ] Explain dimensions, shape, rank, dtype, and device.
+- [ ] Index, slice, reshape, concatenate, and stack tensors.
+- [ ] Explain broadcasting.
+- [ ] Distinguish element-wise operations from matrix multiplication.
+- [ ] Explain autograd and computation graphs.
+- [ ] Compute gradients with `backward()`.
+- [ ] Explain gradient accumulation and clearing.
+- [ ] Build models with `torch.nn.Module`.
+- [ ] Explain parameters and buffers.
+- [ ] Select loss functions for different tasks.
+- [ ] Use optimizers and understand parameter updates.
 
-**Start learning:** [Open the tensor notebook](./tensors_in_pytorch.ipynb)
+### Data and training
 
-<p align="center">
-  <em>Learn the fundamentals. Run the experiments. Understand the gradients. Build the models.</em>
-</p>
+- [ ] Implement a custom `Dataset`.
+- [ ] Configure a `DataLoader`.
+- [ ] Inspect and validate batches.
+- [ ] Split data without leakage.
+- [ ] Build a complete training loop.
+- [ ] Separate training, validation, and test responsibilities.
+- [ ] Add checkpoint saving and loading.
+- [ ] Track learning curves.
+- [ ] Evaluate with task-appropriate metrics.
+- [ ] Analyze failure cases.
+
+### Applied deep learning
+
+- [ ] Complete a reproducible tabular baseline.
+- [ ] Build an image-classification model.
+- [ ] Understand convolution and pooling.
+- [ ] Train and evaluate a CNN.
+- [ ] Explore transfer learning.
+- [ ] Compare baseline and tuned models fairly.
+- [ ] Package a small model for inference.
+- [ ] Document a project with limitations and reproducibility details.
+
+---
+
+## 🔭 Planned next steps
+
+The repository will expand as the foundations become comfortable. Potential next topics include:
+
+| Topic | Why it matters | Possible learning artifact |
+|---|---|---|
+| Optimizers in depth | Understand how parameter updates differ | Optimizer comparison notebook |
+| Learning-rate scheduling | Study how learning rates change during training | Scheduler experiment |
+| Regularization | Investigate overfitting and generalization | Dropout and weight-decay experiment |
+| Convolutional neural networks | Learn image-specific feature extraction | CNN image classifier |
+| Model evaluation | Understand metrics, calibration, and error analysis | Evaluation notebook |
+| Transfer learning | Reuse pretrained representations responsibly | Fine-tuning experiment |
+| Model saving and inference | Separate training from deployment | Checkpoint and inference example |
+| Experiment tracking | Make comparisons auditable | Configuration and metric logging |
+| Reproducible project structure | Make work easier to rerun and review | End-to-end project |
+
+These are future directions, not a representation that the corresponding notebooks already exist.
+
+---
+
+## 🧰 Tools and technologies
+
+| Technology | Purpose |
+|---|---|
+| [Python](https://www.python.org/) | Main programming language |
+| [PyTorch](https://pytorch.org/) | Tensor operations, automatic differentiation, and neural networks |
+| [Jupyter](https://jupyter.org/) | Interactive learning and experimentation |
+| [NumPy](https://numpy.org/) | Numerical arrays and data interoperability |
+| [Pandas](https://pandas.pydata.org/) | Tabular data inspection and manipulation |
+| [scikit-learn](https://scikit-learn.org/) | Dataset utilities, preprocessing, and evaluation tools |
+| [Matplotlib](https://matplotlib.org/) | Static visualizations |
+| [Plotly](https://plotly.com/python/) | Interactive visualizations |
+| [Optuna](https://optuna.org/) | Hyperparameter optimization |
+| [Git](https://git-scm.com/) | Version control |
+| [GitHub](https://github.com/) | Repository hosting and project history |
+
+A package is relevant only when it supports a clear notebook or experiment. The goal is not to maximize the dependency list.
+
+---
+
+## 📖 Learning resources
+
+Official documentation should be the first reference for API behavior and installation instructions. Supplement it with practical implementations and your own experiments.
+
+### PyTorch
+
+- [PyTorch main website](https://pytorch.org/)
+- [Install PyTorch — Start Locally](https://pytorch.org/get-started/locally/)
+- [Official PyTorch tutorials](https://pytorch.org/tutorials/)
+- [PyTorch API documentation](https://pytorch.org/docs/stable/index.html)
+- [Tensor documentation](https://pytorch.org/docs/stable/tensors.html)
+- [Autograd mechanics](https://pytorch.org/docs/stable/notes/autograd.html)
+- [Neural network package](https://pytorch.org/docs/stable/nn.html)
+- [Dataset and DataLoader documentation](https://pytorch.org/docs/stable/data.html)
+- [Saving and loading models](https://pytorch.org/tutorials/beginner/saving_loading_models.html)
+
+### Supporting tools
+
+- [Python documentation](https://docs.python.org/3/)
+- [NumPy documentation](https://numpy.org/doc/stable/)
+- [Pandas documentation](https://pandas.pydata.org/docs/)
+- [scikit-learn documentation](https://scikit-learn.org/stable/)
+- [Matplotlib tutorials](https://matplotlib.org/stable/tutorials/index.html)
+- [Plotly Python documentation](https://plotly.com/python/)
+- [Optuna documentation](https://optuna.readthedocs.io/)
+
+### Practical companion material
+
+- [Learn PyTorch for Deep Learning — GitHub](https://github.com/mrdbourke/pytorch-deep-learning)
+
+Use external tutorials to compare explanations and discover exercises, but implement the concepts yourself. The real test is whether you can explain the code and adapt it to a new dataset or problem.
+
+---
+
+## 🧯 Troubleshooting notes
+
+| Symptom | What to inspect |
+|---|---|
+| Tensor shape mismatch | Print the shape of every relevant tensor before the failing operation |
+| Data type error | Inspect `.dtype` and ensure the operation receives the expected type |
+| CPU/GPU device mismatch | Check that inputs and model parameters are on compatible devices |
+| Missing gradients | Check `requires_grad`, graph tracking, and whether the tensor is a leaf |
+| Gradients seem too large | Check whether gradients were cleared between optimization steps |
+| Notebook variable is undefined | Run cells in order or restart the kernel and run all |
+| Data file not found | Inspect the notebook's expected working directory and path |
+| Plot does not appear | Confirm the plotting backend and inspect the notebook output |
+| Plot file is not saved | Create the output folder and check the current working directory |
+| Different results between runs | Inspect random seeds, data shuffling, hardware, and nondeterministic operations |
+| CUDA is unavailable | Verify the selected PyTorch build and local accelerator setup using the official installation guide |
+| Out-of-memory error | Reduce batch size, model size, or input resolution; release unnecessary tensors |
+
+When fixing an issue, preserve a small example that demonstrates the failure and the correction. A debugging note is useful learning material.
+
+---
+
+## 🧹 Data, artifacts, and reproducibility
+
+A good experiment is not only one that produces a promising number. It is one whose inputs, decisions, and limitations can be inspected.
+
+### Data discipline
+
+- Keep the source, version, and license of each dataset visible.
+- Do not commit private or sensitive data.
+- Avoid uploading large raw datasets when a documented download process is more appropriate.
+- Do not use test data to choose hyperparameters or repeatedly tune a model.
+- Fit transformations such as scaling on the training partition only, then apply them to validation and test data.
+- Inspect labels, missing values, class balance, and possible duplicates.
+
+### Artifact discipline
+
+- Save model state and configuration together where practical.
+- Record the preprocessing steps needed for inference.
+- Avoid committing large checkpoints without a reason.
+- Do not overwrite a valuable model artifact accidentally.
+- Keep generated plots and metrics clearly named.
+- Treat exported models as outputs of a specific experiment, not as universally valid models.
+
+### Reproducibility discipline
+
+Record:
+
+- Python and package versions.
+- Dataset source and any relevant version or checksum.
+- Split strategy and random seed.
+- Model architecture and parameter choices.
+- Loss function and optimizer.
+- Training settings such as learning rate, batch size, and epochs.
+- Compute environment.
+- Metrics and evaluation procedure.
+
+Exact reproducibility can depend on hardware and operation implementation. A seed is helpful, but it is not a universal guarantee that every run will be bit-for-bit identical.
+
+---
+
+## 🤝 Feedback and collaboration
+
+This repository primarily documents my own learning, but constructive educational feedback is welcome.
+
+Helpful feedback includes:
+
+- Correcting a technical or documentation mistake.
+- Suggesting a clearer explanation.
+- Recommending a focused exercise.
+- Identifying a reproducibility issue.
+- Proposing a useful experiment or edge case.
+- Sharing a reliable reference for a PyTorch concept.
+
+For a large change, open an issue first so the goal and scope can be discussed. Attribute third-party code and respect the licenses of code, datasets, pretrained weights, and media.
+
+---
+
+## 📌 Project principles
+
+1. **Understand before scaling.** A small model that is understood is more valuable than a large model that is merely copied.
+2. **Measure before claiming.** Report real metrics and describe the evaluation protocol.
+3. **Keep the test set honest.** Use validation data for model selection and reserve the test set for final evaluation.
+4. **Prefer clarity over cleverness.** Readable notebooks make future debugging easier.
+5. **Document mistakes.** Errors reveal assumptions; fixing them is part of learning.
+6. **Respect data.** Source, license, privacy, and limitations matter.
+7. **Build incrementally.** Each notebook should create a foundation for the next.
+
+---
+
+## 👨‍💻 About the maintainer
+
+**Maganpreet Singh**
+
+This repository is part of my ongoing journey in machine learning and deep learning. I am using it to turn theory into working code, strengthen my understanding of neural networks, and build a public record of experiments and progress.
+
+- GitHub: [@Maganpreet-Singh](https://github.com/Maganpreet-Singh)
+- Repository: [pytorch-learning-journey](https://github.com/Maganpreet-Singh/pytorch-learning-journey)
+
+---
+
+## 📄 License and attribution
+
+No repository license file is currently documented in this README. Until a license is added, do not assume that the repository's original content is licensed for unrestricted reuse. Third-party code, datasets, pretrained weights, and visual assets may have their own terms; check those terms before reuse or redistribution.
+
+A dedicated license file can be added once the intended reuse permissions are chosen.
+
+---
+
+<div align="center">
+
+  <h3>Learn the tensor. Understand the gradient. Build the model. Test the evidence.</h3>
+
+  <p><em>One notebook, one experiment, one concept understood at a time.</em></p>
+
+  <p>
+    <a href="https://github.com/Maganpreet-Singh/pytorch-learning-journey">Explore the repository</a>
+    ·
+    <a href="https://pytorch.org/tutorials/">Study the official tutorials</a>
+  </p>
+
+</div>
