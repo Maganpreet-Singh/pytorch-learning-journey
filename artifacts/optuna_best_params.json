@@ -1,0 +1,30 @@
+{
+  "objective": "maximize_best_validation_accuracy",
+  "best_trial_number": 14,
+  "best_validation_accuracy": 0.8905555555555555,
+  "best_trial_validation_loss": 0.31045320444636876,
+  "best_configuration": {
+    "hidden_dims": [
+      384,
+      192,
+      96
+    ],
+    "dropout": 0.06177017309867169,
+    "activation": "ReLU",
+    "learning_rate": 0.000708474097595478,
+    "weight_decay": 3.965483952346002e-06,
+    "batch_size": 128,
+    "optimizer": "Adam",
+    "momentum": 0.9
+  },
+  "raw_optuna_parameters": {
+    "num_hidden_layers": 3,
+    "first_layer_width": 384,
+    "optimizer": "Adam",
+    "dropout": 0.06177017309867169,
+    "activation": "ReLU",
+    "learning_rate": 0.000708474097595478,
+    "weight_decay": 3.965483952346002e-06,
+    "batch_size": 128
+  }
+}

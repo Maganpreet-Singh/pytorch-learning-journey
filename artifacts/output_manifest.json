@@ -1,0 +1,536 @@
+{
+    "project": "Fashion-MNIST Classification",
+    "images_directory": "C:\\Users\\as178\\OneDrive\\Documents\\ROADMAP\\Semester 3\\Deep Learning\\Pytorch\\images",
+    "artifacts_directory": "C:\\Users\\as178\\OneDrive\\Documents\\ROADMAP\\Semester 3\\Deep Learning\\Pytorch\\artifacts",
+    "file_count": 132,
+    "files": [
+        {
+            "path": "artifacts\\ann_calibration_bins.csv",
+            "size_bytes": 345
+        },
+        {
+            "path": "artifacts\\ann_classification_report.csv",
+            "size_bytes": 814
+        },
+        {
+            "path": "artifacts\\ann_confusion_matrix.csv",
+            "size_bytes": 419
+        },
+        {
+            "path": "artifacts\\ann_per_class_metrics.csv",
+            "size_bytes": 619
+        },
+        {
+            "path": "artifacts\\ann_roc_auc_by_class.csv",
+            "size_bytes": 292
+        },
+        {
+            "path": "artifacts\\ann_top_confusion_pairs.csv",
+            "size_bytes": 622
+        },
+        {
+            "path": "artifacts\\ann_training_history.csv",
+            "size_bytes": 1058
+        },
+        {
+            "path": "artifacts\\best_model_state_dict.pth",
+            "size_bytes": 2292276
+        },
+        {
+            "path": "artifacts\\best_pytorch_breast_cancer_classifier.pt",
+            "size_bytes": 19965
+        },
+        {
+            "path": "artifacts\\class_distribution.csv",
+            "size_bytes": 250
+        },
+        {
+            "path": "artifacts\\class_mean_brightness.csv",
+            "size_bytes": 299
+        },
+        {
+            "path": "artifacts\\classification_report.csv",
+            "size_bytes": 810
+        },
+        {
+            "path": "artifacts\\confusion_matrix.csv",
+            "size_bytes": 418
+        },
+        {
+            "path": "artifacts\\data_quality_report.csv",
+            "size_bytes": 78
+        },
+        {
+            "path": "artifacts\\dataset_overview.csv",
+            "size_bytes": 152
+        },
+        {
+            "path": "artifacts\\evaluation_metrics.json",
+            "size_bytes": 485
+        },
+        {
+            "path": "artifacts\\experiment_summary.json",
+            "size_bytes": 981
+        },
+        {
+            "path": "artifacts\\fashion_ann_checkpoint.pth",
+            "size_bytes": 2292817
+        },
+        {
+            "path": "artifacts\\fashion_ann_pytorch.pth",
+            "size_bytes": 974965
+        },
+        {
+            "path": "artifacts\\fashion_mnist_ann_state_dict.pth",
+            "size_bytes": 2292991
+        },
+        {
+            "path": "artifacts\\fashion_mnist_sgd_classifier.joblib",
+            "size_bytes": 32661
+        },
+        {
+            "path": "artifacts\\highest_variance_pixels.csv",
+            "size_bytes": 448
+        },
+        {
+            "path": "artifacts\\label_mapping.csv",
+            "size_bytes": 127
+        },
+        {
+            "path": "artifacts\\misclassified_predictions.csv",
+            "size_bytes": 44416
+        },
+        {
+            "path": "artifacts\\model_comparison.csv",
+            "size_bytes": 189
+        },
+        {
+            "path": "artifacts\\model_config.json",
+            "size_bytes": 838
+        },
+        {
+            "path": "artifacts\\model_metadata.json",
+            "size_bytes": 1551
+        },
+        {
+            "path": "artifacts\\output_manifest.json",
+            "size_bytes": 15913
+        },
+        {
+            "path": "artifacts\\pca_explained_variance.csv",
+            "size_bytes": 1385
+        },
+        {
+            "path": "artifacts\\per_class_metrics.csv",
+            "size_bytes": 682
+        },
+        {
+            "path": "artifacts\\preprocessing.joblib",
+            "size_bytes": 3146
+        },
+        {
+            "path": "artifacts\\pytorch_nn_module_checkpoint.pth",
+            "size_bytes": 6161
+        },
+        {
+            "path": "artifacts\\run_configuration.json",
+            "size_bytes": 734
+        },
+        {
+            "path": "artifacts\\sgd_average_precision_by_class.csv",
+            "size_bytes": 305
+        },
+        {
+            "path": "artifacts\\sgd_classification_report.csv",
+            "size_bytes": 827
+        },
+        {
+            "path": "artifacts\\sgd_confusion_matrix.csv",
+            "size_bytes": 432
+        },
+        {
+            "path": "artifacts\\sgd_per_class_metrics.csv",
+            "size_bytes": 621
+        },
+        {
+            "path": "artifacts\\sgd_roc_auc_by_class.csv",
+            "size_bytes": 291
+        },
+        {
+            "path": "artifacts\\sgd_top_confusion_pairs.csv",
+            "size_bytes": 618
+        },
+        {
+            "path": "artifacts\\split_class_distribution.csv",
+            "size_bytes": 260
+        },
+        {
+            "path": "artifacts\\split_metrics.csv",
+            "size_bytes": 142
+        },
+        {
+            "path": "artifacts\\test_metrics.json",
+            "size_bytes": 279
+        },
+        {
+            "path": "artifacts\\test_predictions.csv",
+            "size_bytes": 488673
+        },
+        {
+            "path": "artifacts\\test_set_predictions.csv",
+            "size_bytes": 369414
+        },
+        {
+            "path": "artifacts\\training_history.csv",
+            "size_bytes": 2391
+        },
+        {
+            "path": "images\\01_class_distribution_matplotlib.png",
+            "size_bytes": 87058
+        },
+        {
+            "path": "images\\01_derivative_and_tangent.png",
+            "size_bytes": 69998
+        },
+        {
+            "path": "images\\01_tensor_heatmap.png",
+            "size_bytes": 36043
+        },
+        {
+            "path": "images\\02_class_distribution_interactive.html",
+            "size_bytes": 11374
+        },
+        {
+            "path": "images\\02_function_and_derivative.png",
+            "size_bytes": 75122
+        },
+        {
+            "path": "images\\02_tensor_line_plot.png",
+            "size_bytes": 45565
+        },
+        {
+            "path": "images\\03_chain_rule_sin_x_squared.png",
+            "size_bytes": 92310
+        },
+        {
+            "path": "images\\03_one_image_per_class.png",
+            "size_bytes": 59151
+        },
+        {
+            "path": "images\\03_softmax_probabilities.png",
+            "size_bytes": 23439
+        },
+        {
+            "path": "images\\04_finite_difference_error.png",
+            "size_bytes": 66153
+        },
+        {
+            "path": "images\\04_random_image_gallery.png",
+            "size_bytes": 126196
+        },
+        {
+            "path": "images\\05_binary_cross_entropy.png",
+            "size_bytes": 73399
+        },
+        {
+            "path": "images\\05_pixel_intensity_histogram.png",
+            "size_bytes": 45418
+        },
+        {
+            "path": "images\\06_logistic_dataset.png",
+            "size_bytes": 140377
+        },
+        {
+            "path": "images\\06_mean_intensity_by_class.png",
+            "size_bytes": 83741
+        },
+        {
+            "path": "images\\07_logistic_training_curves.png",
+            "size_bytes": 57802
+        },
+        {
+            "path": "images\\07_mean_intensity_by_class_interactive.html",
+            "size_bytes": 11724
+        },
+        {
+            "path": "images\\08_class_mean_prototypes.png",
+            "size_bytes": 71597
+        },
+        {
+            "path": "images\\08_logistic_decision_boundary.png",
+            "size_bytes": 150703
+        },
+        {
+            "path": "images\\09_class_pixel_variability.png",
+            "size_bytes": 79750
+        },
+        {
+            "path": "images\\09_linear_regression_dataset.png",
+            "size_bytes": 76834
+        },
+        {
+            "path": "images\\10_average_row_column_profiles.png",
+            "size_bytes": 120058
+        },
+        {
+            "path": "images\\10_linear_regression_loss.png",
+            "size_bytes": 37959
+        },
+        {
+            "path": "images\\11_linear_regression_fit.png",
+            "size_bytes": 77234
+        },
+        {
+            "path": "images\\11_split_class_distribution.html",
+            "size_bytes": 9484
+        },
+        {
+            "path": "images\\12_mlp_training_curves.png",
+            "size_bytes": 59281
+        },
+        {
+            "path": "images\\12_raw_vs_normalized_image.png",
+            "size_bytes": 23558
+        },
+        {
+            "path": "images\\13_mlp_gradient_norms.png",
+            "size_bytes": 54492
+        },
+        {
+            "path": "images\\13_pca_explained_variance.png",
+            "size_bytes": 47235
+        },
+        {
+            "path": "images\\14_gradient_descent_path.png",
+            "size_bytes": 74355
+        },
+        {
+            "path": "images\\14_pca_cumulative_variance.png",
+            "size_bytes": 77135
+        },
+        {
+            "path": "images\\15_gradient_descent_convergence.png",
+            "size_bytes": 72254
+        },
+        {
+            "path": "images\\15_pca_2d_class_projection.html",
+            "size_bytes": 158835
+        },
+        {
+            "path": "images\\16_pca_component_maps.png",
+            "size_bytes": 50528
+        },
+        {
+            "path": "images\\17_sgd_confusion_matrix.png",
+            "size_bytes": 140003
+        },
+        {
+            "path": "images\\18_sgd_confusion_matrix_interactive.html",
+            "size_bytes": 8667
+        },
+        {
+            "path": "images\\19_sgd_per_class_f1.png",
+            "size_bytes": 70618
+        },
+        {
+            "path": "images\\20_sgd_roc_curves.png",
+            "size_bytes": 144982
+        },
+        {
+            "path": "images\\21_sgd_precision_recall_curves.png",
+            "size_bytes": 226839
+        },
+        {
+            "path": "images\\22_ann_learning_curves.png",
+            "size_bytes": 154728
+        },
+        {
+            "path": "images\\23_ann_learning_curves_interactive.html",
+            "size_bytes": 10177
+        },
+        {
+            "path": "images\\24_learning_rate_schedule.png",
+            "size_bytes": 53050
+        },
+        {
+            "path": "images\\25_ann_confusion_matrix.png",
+            "size_bytes": 139387
+        },
+        {
+            "path": "images\\26_ann_confusion_matrix_interactive.html",
+            "size_bytes": 8662
+        },
+        {
+            "path": "images\\27_ann_per_class_metrics.html",
+            "size_bytes": 9813
+        },
+        {
+            "path": "images\\28_ann_roc_curves.png",
+            "size_bytes": 126624
+        },
+        {
+            "path": "images\\29_ann_calibration_curve.png",
+            "size_bytes": 90747
+        },
+        {
+            "path": "images\\30_ann_confidence_distribution.png",
+            "size_bytes": 50299
+        },
+        {
+            "path": "images\\31_ann_misclassified_gallery.png",
+            "size_bytes": 150808
+        },
+        {
+            "path": "images\\32_ann_top_confusion_pairs.html",
+            "size_bytes": 9107
+        },
+        {
+            "path": "images\\33_single_image_prediction.png",
+            "size_bytes": 45592
+        },
+        {
+            "path": "images\\34_model_accuracy_comparison.html",
+            "size_bytes": 9275
+        },
+        {
+            "path": "images\\35_ann_roc_auc_by_class.html",
+            "size_bytes": 9006
+        },
+        {
+            "path": "images\\ann_architecture.png",
+            "size_bytes": 66662
+        },
+        {
+            "path": "images\\class_distribution.png",
+            "size_bytes": 132548
+        },
+        {
+            "path": "images\\class_mean_images.png",
+            "size_bytes": 93567
+        },
+        {
+            "path": "images\\class_sample_gallery.png",
+            "size_bytes": 87486
+        },
+        {
+            "path": "images\\common_misclassifications.png",
+            "size_bytes": 125843
+        },
+        {
+            "path": "images\\confidence_distribution.png",
+            "size_bytes": 83615
+        },
+        {
+            "path": "images\\confidence_reliability_diagram.png",
+            "size_bytes": 118136
+        },
+        {
+            "path": "images\\confusion_matrix.png",
+            "size_bytes": 193603
+        },
+        {
+            "path": "images\\dataloader_batch_preview.png",
+            "size_bytes": 100149
+        },
+        {
+            "path": "images\\learning_rate_schedule.png",
+            "size_bytes": 75019
+        },
+        {
+            "path": "images\\misclassification_gallery.png",
+            "size_bytes": 257351
+        },
+        {
+            "path": "images\\per_class_metrics.png",
+            "size_bytes": 112084
+        },
+        {
+            "path": "images\\pixel_intensity_distribution.png",
+            "size_bytes": 67739
+        },
+        {
+            "path": "images\\plots\\01_target_distribution.html",
+            "size_bytes": 9369
+        },
+        {
+            "path": "images\\plots\\02_missing_values.html",
+            "size_bytes": 8391
+        },
+        {
+            "path": "images\\plots\\03_feature_distributions.html",
+            "size_bytes": 44228
+        },
+        {
+            "path": "images\\plots\\04_correlation_heatmap.html",
+            "size_bytes": 12208
+        },
+        {
+            "path": "images\\plots\\05_split_class_counts.html",
+            "size_bytes": 9234
+        },
+        {
+            "path": "images\\plots\\06_pca_training_projection.html",
+            "size_bytes": 17567
+        },
+        {
+            "path": "images\\plots\\07_training_diagnostics.html",
+            "size_bytes": 28507
+        },
+        {
+            "path": "images\\plots\\08_validation_model_comparison.html",
+            "size_bytes": 9996
+        },
+        {
+            "path": "images\\plots\\09_validation_threshold_analysis.html",
+            "size_bytes": 14224
+        },
+        {
+            "path": "images\\plots\\10_test_roc_curve.html",
+            "size_bytes": 8722
+        },
+        {
+            "path": "images\\plots\\11_test_precision_recall_curve.html",
+            "size_bytes": 10147
+        },
+        {
+            "path": "images\\plots\\12_test_confusion_matrix.html",
+            "size_bytes": 8736
+        },
+        {
+            "path": "images\\plots\\13_test_probability_distribution.html",
+            "size_bytes": 12784
+        },
+        {
+            "path": "images\\plots\\14_validation_permutation_importance.html",
+            "size_bytes": 9555
+        },
+        {
+            "path": "images\\single_prediction_example.png",
+            "size_bytes": 11270
+        },
+        {
+            "path": "images\\split_accuracy_comparison.png",
+            "size_bytes": 65538
+        },
+        {
+            "path": "images\\split_class_distribution.png",
+            "size_bytes": 93567
+        },
+        {
+            "path": "images\\test_probability_distribution.png",
+            "size_bytes": 61801
+        },
+        {
+            "path": "images\\top3_prediction_probabilities.png",
+            "size_bytes": 56622
+        },
+        {
+            "path": "images\\training_dashboard.png",
+            "size_bytes": 198979
+        },
+        {
+            "path": "images\\within_class_variation.png",
+            "size_bytes": 151116
+        }
+    ]
+}
