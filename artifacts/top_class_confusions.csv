@@ -1,0 +1,16 @@
+true_class,predicted_class,count
+Shirt,T-shirt/top,184
+Coat,Pullover,98
+Shirt,Pullover,77
+Sneaker,Ankle boot,56
+Shirt,Coat,52
+T-shirt/top,Shirt,51
+Pullover,Shirt,50
+Pullover,Coat,48
+Coat,Shirt,42
+Dress,Coat,30
+Shirt,Dress,27
+Sandal,Sneaker,27
+Sandal,Ankle boot,26
+Sneaker,Sandal,24
+Coat,Dress,23

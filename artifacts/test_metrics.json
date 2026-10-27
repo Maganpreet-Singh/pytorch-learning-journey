@@ -1,0 +1,10 @@
+{
+    "test_accuracy": 0.8616666666666667,
+    "macro_precision": 0.8676108254924684,
+    "macro_recall": 0.8641348574934838,
+    "macro_f1": 0.8646101960488652,
+    "best_epoch": 20,
+    "epochs_trained": 26,
+    "training_seconds": 3.7535035610198975,
+    "test_images": 1200
+}

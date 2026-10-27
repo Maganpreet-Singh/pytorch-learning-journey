@@ -1,0 +1,12 @@
+{
+  "accuracy": 0.9281,
+  "macro_precision": 0.9287727598107353,
+  "macro_recall": 0.9280999999999999,
+  "macro_f1": 0.9281954568799465,
+  "weighted_f1": 0.9281954568799465,
+  "macro_ovr_roc_auc": 0.9960730999999999,
+  "best_full_validation_accuracy": 0.921,
+  "best_optuna_validation_macro_f1": 0.8164590575646411,
+  "completed_trials": 3,
+  "pruned_trials": 9
+}

@@ -1,0 +1,21 @@
+{
+  "test_accuracy": 0.8965,
+  "weighted_precision": 0.8966050829115142,
+  "weighted_recall": 0.8965,
+  "weighted_f1": 0.8950527694939696,
+  "macro_precision": 0.8966050829115142,
+  "macro_recall": 0.8965,
+  "macro_f1": 0.8950527694939696,
+  "test_samples": 10000,
+  "trainable_parameters": 396202,
+  "macro_ovr_roc_auc": 0.9929082888888887,
+  "epochs_completed": 12,
+  "best_epoch": 7,
+  "best_validation_loss": 0.29815148899290295,
+  "validation_accuracy_at_best_loss": 0.8903333333333333,
+  "final_train_accuracy": 0.9314509803921569,
+  "final_validation_accuracy": 0.8941111111111111,
+  "training_seconds": 49.22558129997924,
+  "inference_seconds": 0.01220100000500679,
+  "inference_images_per_second": 167855.09377588597
+}

@@ -1,0 +1,11 @@
+class_name,accuracy
+T-shirt/top,0.906
+Trouser,0.986
+Pullover,0.864
+Dress,0.922
+Coat,0.828
+Sandal,0.942
+Shirt,0.644
+Sneaker,0.919
+Bag,0.978
+Ankle boot,0.976

@@ -1,0 +1,37 @@
+{
+    "created_at": "2026-10-27T19:29:46",
+    "python_version": "3.14.7",
+    "pytorch_version": "2.14.1+cu132",
+    "numpy_version": "2.5.4",
+    "pandas_version": "3.1.0",
+    "device_type": "cpu",
+    "gpu_available": false,
+    "gpu_name": null,
+    "train_rows": 60000,
+    "validation_rows": 6000,
+    "test_rows": 10000,
+    "seed": 42,
+    "model_config": {
+        "architecture": "FashionCNN",
+        "input_shape": [
+            1,
+            28,
+            28
+        ],
+        "num_classes": 10,
+        "batch_size": 128,
+        "max_epochs": 18,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "seed": 42
+    },
+    "headline_metrics": {
+        "train_accuracy": 0.9769814814814815,
+        "validation_accuracy": 0.9316666666666666,
+        "test_accuracy": 0.9355,
+        "test_loss": 0.1904098033696413,
+        "epochs_completed": 18,
+        "best_epoch": 14,
+        "training_minutes": 23.08216596499939
+    }
+}
