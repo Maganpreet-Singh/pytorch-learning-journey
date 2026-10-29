@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "image_size": 96,
+  "batch_size": 128,
+  "validation_fraction": 0.1,
+  "head_epochs_requested": 4,
+  "fine_tune_epochs_requested": 2,
+  "head_learning_rate": 0.001,
+  "fine_tune_learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "device_type": "cpu",
+  "torch_version": "2.14.1+cu132",
+  "pretrained_weights_loaded": true
+}

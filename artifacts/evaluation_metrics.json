@@ -1,12 +1,10 @@
 {
-  "accuracy": 0.9281,
-  "macro_precision": 0.9287727598107353,
-  "macro_recall": 0.9280999999999999,
-  "macro_f1": 0.9281954568799465,
-  "weighted_f1": 0.9281954568799465,
-  "macro_ovr_roc_auc": 0.9960730999999999,
-  "best_full_validation_accuracy": 0.921,
-  "best_optuna_validation_macro_f1": 0.8164590575646411,
-  "completed_trials": 3,
-  "pruned_trials": 9
+  "test_loss": 0.23607834120392798,
+  "test_accuracy": 0.914,
+  "validation_loss": 0.25010787693659464,
+  "validation_accuracy": 0.907,
+  "best_validation_accuracy_during_training": 0.907,
+  "test_examples": 10000,
+  "num_classes": 10,
+  "pretrained_weights_loaded": true
 }

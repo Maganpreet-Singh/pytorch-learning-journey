@@ -1,0 +1,5 @@
+question,answer,method,confidence,similarity,matched_question
+What is the capital of France?,Paris,exact match,1.0,1.0,What is the capital of France?
+What is the capital city of Germany?,Berlin,TF-IDF retrieval,0.9928970336914062,0.839204718720381,What is the capital of Germany?
+What is the chemical symbol for gold?,Au,exact match,1.0,1.0,What is the chemical symbol for gold?
+Who won the 2022 FIFA World Cup?,I don't know.,abstained,0.42942026257514954,0.2901941784057131,What is the smallest country in the world?
