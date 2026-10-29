@@ -1,0 +1,3 @@
+split,rows,columns,unique_labels,pixel_min,pixel_max,pixel_mean
+train,60000,785,10,0,255,72.95682525634766
+test,10000,785,10,0,255,73.16080474853516

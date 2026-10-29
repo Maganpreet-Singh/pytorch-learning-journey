@@ -1,0 +1,4 @@
+model,test_accuracy,training_seconds,error_rate
+DummyClassifier,0.1,,0.9
+SGDClassifier,0.8255,2.6862683296203613,0.1745
+FashionANN (PyTorch),0.9007,55.7711021900177,0.09930000000000005
